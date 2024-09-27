@@ -1,1 +1,107 @@
+#include <iostream>
+using namespace std;
 
+class Add {
+	int a, b;
+	int result;
+public:
+	void setValue(int x, int y) {
+		a = x;
+		b = y;
+	}
+	int calculate() {
+		result = a + b;
+		return result;
+	}
+};
+
+class Sub {
+	int a, b;
+	int result;
+public:
+	void setValue(int x, int y) {
+		a = x;
+		b = y;
+	}
+	int calculate() {
+		result = a - b;
+		return result;
+	}
+};
+
+class Mul {
+	int a, b;
+	int result;
+public:
+	void setValue(int x, int y) {
+		a = x;
+		b = y;
+	}
+	int calculate() {
+		result = a * b;
+		return result;
+	}
+};
+
+class Div {
+	int a, b;
+	int result;
+public:
+	void setValue(int x, int y) {
+		a = x;
+		b = y;
+	}
+	int calculate() {
+		if (b != 0) {
+			result = a / b;
+			return result;
+		}
+
+		else {
+			cout << "0으로 나누기는 불가능합니다.\n다시 시도해주세요." << endl;
+			return 0;
+		}
+	}
+};
+
+int main() {
+	Add  a;
+	Sub b;
+	Mul m;
+	Div d;
+
+	while (true) {
+		int x, y;
+		char cal;
+		cout << "두 정수와 연산자를 입력하세요 >> ";
+		cin >> x >> y >> cal;
+
+		switch (cal)
+		{
+		case '+':
+			a.setValue(x, y);
+			cout << a.calculate() << endl;
+			break;
+
+		case '-':
+			b.setValue(x, y);
+			cout << b.calculate() << endl;
+			break;
+
+		case '*':
+			m.setValue(x, y);
+			cout << m.calculate() << endl;
+			break;
+
+		case '/':
+			d.setValue(x, y);
+			cout << d.calculate() << endl;
+			break;
+
+		default:
+			cout << "잘못된 연산입니다." << endl;
+
+		}
+	}
+	return 0;
+}
