@@ -5,7 +5,6 @@
 #include "GamblingGame.h"
 using namespace std;
 
-// Player 클래스 구현
 Player::Player(string playerName) : name(playerName) {}
 
 string Player::getName() {
@@ -22,7 +21,6 @@ bool Player::generate() {
     return (num1 == num2 && num2 == num3);
 }
 
-// GamblingGame 클래스 구현
 GamblingGame::GamblingGame(string name1, string name2) : players{ Player(name1), Player(name2) } {}
 
 void GamblingGame::startGame() {
@@ -47,7 +45,6 @@ void GamblingGame::startGame() {
     }
 }
 
-// main 함수
 int main() {
     string Player1Name, Player2Name;
 
